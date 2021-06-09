@@ -6,11 +6,19 @@
 
 body {
   height: 100vh;
+  background: rgb(231, 243, 247);
 }
 
 a {
+  display: inline-block;
+  width: 100%;
   text-decoration: none;
   color: rgb(0, 142, 189);
+  padding: 10px 45px;
+}
+
+a:hover {
+  opacity: .3;
 }
 
 ul {
@@ -18,8 +26,11 @@ ul {
 }
 
 li {
-  padding: 10px 5px;
   font-size: 20px;
+}
+
+li:hover {
+  background: lightblue;
 }
 
 main {
@@ -28,12 +39,25 @@ main {
   align-items: center;
   height: 100px;
   padding: 0 40px;
-
-  
 }
 
 .hamburger {
   font-size: 25px;
+  padding: 10px;
+
+  animation: growAndShrink 2.5s infinite linear;
+}
+
+@keyframes growAndShrink {
+  0% {
+    font-size: 25px;
+  }
+  50% {
+    font-size: 30px;
+  }
+  100% {
+    font-size: 25px;
+  }
 }
 
 svg {
@@ -43,8 +67,8 @@ svg {
 }
 
 .sidebar {
-  padding: 20px 40px;
-  background: red;
+  padding: 20px 0px;
+  background: white;
   width: 400px;
   height: 100%;
   display: flex;
@@ -54,26 +78,21 @@ svg {
   position: absolute;
   top: 0px;
   left: -400px;
-  /* transform: translateX(-400px); */
   transition: .4s;
 }
 
 .show-sidebar {
-  /* position: absolute;
-  top: 0;
-  left: 0px; */
-  /* transform: translateX(0px); */
-  position: relative;
+  position: absolute;
   top: 0px;
   left: 0px;
 }
 
-.im-red {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-}
-
-.red {
-    background-color: red;
+@media (max-width: 500px) {
+  .sidebar {
+    width: 220px;
+  }
+  svg {
+    margin: 0;
+    padding: 5px 35px;
+  }
 }
